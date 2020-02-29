@@ -8,4 +8,4 @@ Folloiwngs is the comments on the order of run time
 - Task2 - O(n). This does not use sorting
 - Task3 A - O(n log n). This uses SampleSort (list.sort())
 - Task3 B - O(n). Check each call once at maximum
-- Task4  - O(n**2). For each phonenumber, check all phonenumber in another set. So this is N**2 (since the size of the both sets are close). There is also SampleSort, but O(n**2) has larger impact than O(n log n)
+- Task4  - O(n ^ 2). For each phonenumber, check all phonenumber in another set. So the runtime order  is n ^ 2, considering that the size of the both sets are close. There is also SampleSort, but O(n ^ 2) has larger impact than O(n log n)
