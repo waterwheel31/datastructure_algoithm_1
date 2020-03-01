@@ -19,8 +19,8 @@ Print a message:
 "There are <count> different telephone numbers in the records."
 """
 
-print(texts[0])
-print(calls[0])
+#print(texts[0])
+#print(calls[0])
 
 phone_numbers = []
 

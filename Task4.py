@@ -35,6 +35,11 @@ for call in calls:
     for text in texts:
         if text[0] == number: 
             is_telemarketer = False
+        if text[1] == number: 
+            is_telemarketer = False
+    for call in calls:
+        if call[1] == number:
+            is_telemarketer = False
 
     if is_telemarketer: 
         numbers.append(number)

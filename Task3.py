@@ -44,13 +44,13 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
-import re
+#import re
 
 codes = []
 
 for call in calls: 
   if call[0].startswith('(080)'):
-     code = call[1].split(')')[0].split(' ')[0].replace('(','')
+     code = call[1].split(')')[0].split(' ')[0].replace('(','')[:4]
      codes.append(code)
      #code = re.split('[()]', call[1])
      #print(code)
@@ -63,12 +63,14 @@ for code in codes_set:
   print(code)
 
 
-total_calls = len(codes)
-calls_fixedlines = 0.0
-for code in codes: 
-  if code.startswith('0'):
-    calls_fixedlines += 1
+calls_from_BG_fixed = 0.0
+calls_from_BG_fixed_to_BG_fixed = 0.0
+for call in calls: 
+  if call[0].startswith('(080)'):
+    calls_from_BG_fixed += 1
+    if call[1].startswith('(080'):
+      calls_from_BG_fixed_to_BG_fixed += 1
 
-percentage = int(calls_fixedlines /  total_calls * 100)
+percentage = int(calls_from_BG_fixed_to_BG_fixed /  calls_from_BG_fixed * 100)
 
 print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(percentage))
