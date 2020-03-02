@@ -71,6 +71,6 @@ for call in calls:
     if call[1].startswith('(080'):
       calls_from_BG_fixed_to_BG_fixed += 1
 
-percentage = int(calls_from_BG_fixed_to_BG_fixed /  calls_from_BG_fixed * 100)
+percentage = calls_from_BG_fixed_to_BG_fixed /  calls_from_BG_fixed * 100
 
-print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(percentage))
+print("{0:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(percentage))

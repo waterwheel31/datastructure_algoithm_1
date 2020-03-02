@@ -25,28 +25,20 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-numbers = []
+numbers = set()
 
 for call in calls: 
-    number = call[0]
+    numbers.add(call[0])
 
-    is_telemarketer = True
 
-    for text in texts:
-        if text[0] == number: 
-            is_telemarketer = False
-        if text[1] == number: 
-            is_telemarketer = False
-    for call in calls:
-        if call[1] == number:
-            is_telemarketer = False
+for call in calls: 
+    numbers.discard(call[1])
 
-    if is_telemarketer: 
-        numbers.append(number)
+for text in texts: 
+    numbers.discard(text[0])
+    numbers.discard(text[1])
 
-numbers = list(set(numbers))
-numbers.sort()
 
 print("These numbers could be telemarketers: ")
-for number in numbers: 
+for number in sorted(numbers): 
     print(number)

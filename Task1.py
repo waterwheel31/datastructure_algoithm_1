@@ -22,17 +22,16 @@ Print a message:
 #print(texts[0])
 #print(calls[0])
 
-phone_numbers = []
+phone_numbers = set()
 
 for item in texts: 
-    phone_numbers.append(item[0])
-    phone_numbers.append(item[1])
+    phone_numbers.add(item[0])
+    phone_numbers.add(item[1])
 
 for item in calls:
-    phone_numbers.append(item[0])
-    phone_numbers.append(item[1])
+    phone_numbers.add(item[0])
+    phone_numbers.add(item[1])
 
-phone_numbers = set(phone_numbers)
 
 counts = len(phone_numbers)
 
